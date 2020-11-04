@@ -1,0 +1,38 @@
+package com.example.ht3dd_eb;
+
+import android.app.Activity;
+import android.util.Log;                // logs
+import android.os.Bundle;
+
+import org.opencv.android.OpenCVLoader;  // openCV
+
+
+public class MainActivity extends Activity {
+
+    //public Fd Fd_Thread;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //Fd_Thread = new Fd(this);			//shn: this or mContext as input parameter. what is correct?
+
+		if (!OpenCVLoader.initDebug()) {
+			Log.e(this.getClass().getSimpleName(), "  OpenCVLoader.initDebug(), not working.");
+		} else {
+			Log.d(this.getClass().getSimpleName(), "  OpenCVLoader.initDebug(), working.");
+		}
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+}
